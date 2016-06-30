@@ -28,6 +28,8 @@ void initMotor(int number) {
 	//brake initially
 	digitalWrite(inApin[number], LOW);
 	digitalWrite(inBpin[number], LOW);
+
+	pinMode(13, OUTPUT);
 }
 
 void setMotorPower(int number, double power) {
@@ -55,6 +57,8 @@ void setup() {
 	initMotor(1);
 	cmds[0] = 0;
 	cmds[1] = 0;
+
+	digitalWrite(13, LOW);
 	/*pid_0.SetOutputLimits(-1, 1);
 	pid_1.SetOutputLimits(-1, 1);
 	pid_0.SetMode(AUTOMATIC);
@@ -79,8 +83,12 @@ void loop() {
 		if (c == '?') {
 			sendSpeeds();
 		} else if (c == '#') {
-
-			Serial.readBytes((char*) cmds, sizeof(double) * 2);
+			Serial.readBytes((char*)cmds, sizeof(double));
+			if(cmds[0] > 0.1) {
+				digitalWrite(13, HIGH);
+			} else {
+				digitalWrite(13, LOW);
+			}
 		}
 	}
 
@@ -89,7 +97,6 @@ void loop() {
 
 	setMotorPower(0, cmds[0] );
 	setMotorPower(1, cmds[1]);
-
 	//setMotorPower(0, 0.2);
 	//setMotorPower(1, 1);
 }

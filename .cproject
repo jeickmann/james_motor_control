@@ -22,6 +22,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/james_motor_control/core/core}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/james_motor_control/core/variant}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/james_motor_control/libraries/PIDLibrary}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/james_motor_control/libraries/PID}&quot;"/>
 								</option>
 								<inputType id="it.baeyens.arduino.compiler.cpp.sketch.input.1777586858" name="CPP source files" superClass="it.baeyens.arduino.compiler.cpp.sketch.input"/>
 							</tool>
@@ -30,6 +31,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/james_motor_control/core/core}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/james_motor_control/core/variant}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/james_motor_control/libraries/PIDLibrary}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/james_motor_control/libraries/PID}&quot;"/>
 								</option>
 								<inputType id="it.baeyens.arduino.compiler.c.sketch.input.885853868" name="C Source Files" superClass="it.baeyens.arduino.compiler.c.sketch.input"/>
 							</tool>

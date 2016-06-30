@@ -34,12 +34,17 @@
 		<link>
 			<name>core/core</name>
 			<type>2</type>
-			<location>/Applications/eclipseArduino.app/Contents/Eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.10/cores/arduino</location>
+			<location>/home/james/eclipse/cpp-neon/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.11/cores/arduino</location>
 		</link>
 		<link>
 			<name>core/variant</name>
 			<type>2</type>
-			<location>/Applications/eclipseArduino.app/Contents/Eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.10/variants/standard</location>
+			<location>/home/james/eclipse/cpp-neon/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.11/variants/standard</location>
+		</link>
+		<link>
+			<name>libraries/PID</name>
+			<type>2</type>
+			<location>/home/james/eclipse/cpp-neon/eclipse/arduinoPlugin/libraries/PID/1.1.1</location>
 		</link>
 		<link>
 			<name>libraries/PIDLibrary</name>
