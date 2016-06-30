@@ -48,11 +48,13 @@ void setMotorPower(int number, double power) {
 	}
 }
 
-//The setup function is called once at startup of the sketch
+//The setup function is called once  at startup of the sketch
 void setup() {
-	//Serial.begin(115200);
+	Serial.begin(115200);
 	initMotor(0);
 	initMotor(1);
+	cmds[0] = 0;
+	cmds[1] = 0;
 	/*pid_0.SetOutputLimits(-1, 1);
 	pid_1.SetOutputLimits(-1, 1);
 	pid_0.SetMode(AUTOMATIC);
@@ -60,7 +62,7 @@ void setup() {
 }
 
 void sendSpeeds() {
-	Serial.write((char*) speeds, sizeof(float) * 2);
+	Serial.write((char*) speeds, sizeof(double) * 2);
 }
 
 void updateSpeeds() {
@@ -69,23 +71,25 @@ void updateSpeeds() {
 
 // The loop function is called in an endless loop
 void loop() {
-	/*
+/*
 	updateSpeeds();
-
+*/
 	if (Serial.available()) {
 		char c = Serial.read();
 		if (c == '?') {
 			sendSpeeds();
 		} else if (c == '#') {
-			Serial.readBytes((char*) cmds, sizeof(float) * 2);
+
+			Serial.readBytes((char*) cmds, sizeof(double) * 2);
 		}
 	}
 
 	//pid_0.Compute();
 	//pid_1.Compute();
 
-	setMotorPower(0, powers[0]);
-	setMotorPower(1, powers[1]);
-	*/
-	setMotorPower(0, 0.5);
+	setMotorPower(0, cmds[0] );
+	setMotorPower(1, cmds[1]);
+
+	//setMotorPower(0, 0.2);
+	//setMotorPower(1, 1);
 }
