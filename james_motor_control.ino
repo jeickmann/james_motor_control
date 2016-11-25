@@ -47,6 +47,8 @@ void setMotorPower(int number, double power) {
 	} else {
 		digitalWrite(inApin[number], LOW);
 		digitalWrite(inBpin[number], HIGH);
+
+		analogWrite(pwmpin[number], -pwmPower);
 	}
 }
 
@@ -83,7 +85,7 @@ void loop() {
 		if (c == '?') {
 			sendSpeeds();
 		} else if (c == '#') {
-			Serial.readBytes((char*)cmds, sizeof(double));
+			Serial.readBytes((char*)cmds, 2*sizeof(double));
 			if(cmds[0] > 0.1) {
 				digitalWrite(13, HIGH);
 			} else {
